@@ -1,0 +1,48 @@
+﻿@page
+@model ActivityTest.RazorPage.Pages.AddModel
+@{
+}
+
+<form method="post" class="card">
+    <div class="row card-body">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input type="text" class="form-control" asp-for="Name">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="LogInformation"></label>
+                <input type="text" class="form-control" asp-for="LogInformation">
+                <span asp-validation-for="LogInformation" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Code"></label>
+                <input type="number" class="form-control" asp-for="Code">
+                <span asp-validation-for="Code" class="text-danger"></span>
+            </div>
+        </div>
+
+        @{
+            var id = Guid.NewGuid();
+        }
+
+        <div class="col-md-6">
+            <div class="custom-control custom-switch custom-switch-success mr-2 mb-1">
+                <label asp-for="IsActive" class="mb-0 d-block"></label>
+                <input type="checkbox" class="custom-control-input" asp-for="IsActive" id="@id">
+                <label class="custom-control-label" for="@id">
+                    <span class="switch-icon-left"><i class="bx bx-check"></i></span>
+                    <span class="switch-icon-right"><i class="bx bx-check"></i></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-left">
+        <button class="btn btn-success" type="submit">ثبت اطلاعات</button>
+    </div>
+</form>
